@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/Deneme.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/10 - PostgreSQL IS NULL.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/5 - PostgreSQL LIMIT.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/6 - PostgreSQL FETCH.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/7 - PostgreSQL IN.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/8 - PostgreSQL BETWEEN.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/9 - PostgreSQL LIKE.sql" dialect="PostgreSQL" />
   </component>
 </project>
