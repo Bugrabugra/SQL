@@ -1,3 +1,5 @@
+--1) Querying hierarchy data example
+
 create table employee (
     employee_id int primary key,
     first_name varchar(255) not null,
@@ -28,5 +30,24 @@ values
 select e.first_name || ' ' || e.last_name as employee,
        m.first_name || ' ' || m.last_name as manager
 from employee e
-inner join employee m on m.employee_id = e.manager_id
+inner join employee m
+           on m.employee_id = e.manager_id
 order by manager;
+
+
+select e.first_name || ' ' || e.last_name as employee,
+       m.first_name || ' ' || m.last_name as manager
+from employee e
+left join employee m
+          on m.employee_id = e.manager_id
+order by manager;
+
+
+--2) Comparing the rows with the same table
+select f1.title,
+       f2.title,
+       f1.length
+from film f1
+inner join film f2
+           on f1.film_id <> f2.film_id
+               and f1.length = f2.length;

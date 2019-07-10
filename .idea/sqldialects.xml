@@ -8,6 +8,8 @@
     <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/13 - PostgreSQL INNER JOIN.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/14 - PostgreSQL LEFT JOIN.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/15 - PostgreSQL Self-Join.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/16 - PostgreSQL FULL OUTER JOIN.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/17 - PostgreSQL Cross Join By Example.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/2 - PostgreSQL ORDER BY" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/3 - PostgreSQL SELECT DISTINCT.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/4 - PostgreSQL WHERE.sql" dialect="PostgreSQL" />
