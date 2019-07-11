@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/1 - PostgreSQL SELECT.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/10 - PostgreSQL IS NULL.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/11 - PostgreSQL Alias.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/12 - PostgreSQL Joins.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/13 - PostgreSQL INNER JOIN.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/14 - PostgreSQL LEFT JOIN.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/15 - PostgreSQL Self-Join.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/16 - PostgreSQL FULL OUTER JOIN.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/17 - PostgreSQL Cross Join By Example.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/2 - PostgreSQL ORDER BY" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/3 - PostgreSQL SELECT DISTINCT.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/4 - PostgreSQL WHERE.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/5 - PostgreSQL LIMIT.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/6 - PostgreSQL FETCH.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/7 - PostgreSQL IN.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/8 - PostgreSQL BETWEEN.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/9 - PostgreSQL LIKE.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 2. Querying Data/1 - PostgreSQL SELECT.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 2. Querying Data/2 - PostgreSQL ORDER BY" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 2. Querying Data/3 - PostgreSQL SELECT DISTINCT.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 3. Filtering Data/10 - PostgreSQL IS NULL.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 3. Filtering Data/11 - PostgreSQL Alias.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 3. Filtering Data/4 - PostgreSQL WHERE.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 3. Filtering Data/5 - PostgreSQL LIMIT.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 3. Filtering Data/6 - PostgreSQL FETCH.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 3. Filtering Data/7 - PostgreSQL IN.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 3. Filtering Data/8 - PostgreSQL BETWEEN.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 3. Filtering Data/9 - PostgreSQL LIKE.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 4. Joining Multiple Tables/12 - PostgreSQL Joins.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 4. Joining Multiple Tables/13 - PostgreSQL INNER JOIN.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 4. Joining Multiple Tables/14 - PostgreSQL LEFT JOIN.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 4. Joining Multiple Tables/15 - PostgreSQL Self-Join.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 4. Joining Multiple Tables/16 - PostgreSQL FULL OUTER JOIN.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 4. Joining Multiple Tables/17 - PostgreSQL CROSS JOIN.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 4. Joining Multiple Tables/18 - PostgreSQL NATURAL JOIN.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/PostgreSQL Tutorial/Section 5. Grouping Data/19 - PostgreSQL GROUP BY.sql" dialect="PostgreSQL" />
   </component>
 </project>

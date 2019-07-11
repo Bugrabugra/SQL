@@ -6,7 +6,7 @@ select customer.customer_id,
        payment_date
 from customer
 inner join payment payment
-           on customer.customer_id = payment.customer_id
+on customer.customer_id = payment.customer_id
 where customer.customer_id = 2
 order by customer.customer_id;
 
@@ -21,8 +21,8 @@ select customer.customer_id,
        payment_date
 from customer
 inner join payment
-           on customer.customer_id = payment.customer_id
+on customer.customer_id = payment.customer_id
 inner join staff
-           on payment.staff_id = staff.staff_id;
+on payment.staff_id = staff.staff_id;
 
 

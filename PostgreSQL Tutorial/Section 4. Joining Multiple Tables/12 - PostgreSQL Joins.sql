@@ -32,7 +32,7 @@ select a.id as id_a,
        b.fruit as fruit_b
 from basket_a a
 inner join basket_b b
-           on a.fruit = b.fruit;
+on a.fruit = b.fruit;
 
 
 --PostgreSQL left join
@@ -42,7 +42,7 @@ select a.id as id_a,
        b.fruit as fruit_b
 from basket_a a
 left join basket_b b
-          on a.fruit = b.fruit;
+on a.fruit = b.fruit;
 
 
 select a.id as id_a,
@@ -51,7 +51,7 @@ select a.id as id_a,
        b.fruit as fruit_b
 from basket_a a
 left join basket_b b
-          on a.fruit = b.fruit
+on a.fruit = b.fruit
 where b.id is null;
 
 
@@ -62,7 +62,7 @@ select a.id as id_a,
        b.fruit as fruit_b
 from basket_a a
 right join basket_b b
-           on a.fruit = b.fruit;
+on a.fruit = b.fruit;
 
 
 select a.id as id_a,
@@ -71,7 +71,7 @@ select a.id as id_a,
        b.fruit as fruit_b
 from basket_a a
 right join basket_b b
-           on a.fruit = b.fruit
+on a.fruit = b.fruit
 where a.id is null;
 
 
@@ -82,7 +82,7 @@ select a.id as id_a,
        b.fruit as fruit_b
 from basket_a a
 full outer join basket_b b
-                on a.fruit = b.fruit;
+on a.fruit = b.fruit;
 
 
 select a.id as id_a,
@@ -91,6 +91,6 @@ select a.id as id_a,
        b.fruit as fruit_b
 from basket_a a
 full join basket_b b
-          on a.fruit = b.fruit
+on a.fruit = b.fruit
 where a.id is null
    or b.id is null;

@@ -45,14 +45,14 @@ select employee_name,
        department_name
 from employees e
 full outer join departments d
-                on d.department_id = e.departmant_id;
+on d.department_id = e.departmant_id;
 
 
 select employee_name,
        department_name
 from employees e
 full outer join departments d
-                on d.department_id = e.departmant_id
+on d.department_id = e.departmant_id
 where employee_name is null;
 
 
@@ -60,5 +60,5 @@ select employee_name,
        department_name
 from employees e
 full outer join departments d
-                on d.department_id = e.departmant_id
+on d.department_id = e.departmant_id
 where department_name is null;
