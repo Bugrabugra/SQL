@@ -42,5 +42,3 @@ where customer_id in
       (select customer_id
        from rental
        where cast(return_date as date) = '2005-05-27');
-
-

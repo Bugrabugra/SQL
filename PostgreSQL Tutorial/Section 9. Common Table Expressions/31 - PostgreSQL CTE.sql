@@ -51,3 +51,4 @@ with cte_film as (
 select *
 from cte_film
 where length_rank = 1;
+
