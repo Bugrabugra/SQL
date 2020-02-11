@@ -1,14 +1,13 @@
-create table if not exists departments (
-    department_id serial primary key,
-    department_name varchar(255) not null
-);
+--PostgreSQL FULL OUTER JOIN example
+create table if not exists departments
+    (department_id serial primary key,
+     department_name varchar(255) not null);
 
 
-create table if not exists employees (
-    employee_id serial primary key,
-    employee_name varchar(255),
-    departmant_id integer
-);
+create table if not exists employees
+    (employee_id serial primary key,
+     employee_name varchar(255),
+     department_id integer);
 
 
 insert into departments
@@ -23,7 +22,7 @@ values
 
 insert into employees
     (employee_name,
-     departmant_id)
+     department_id)
 values
     ('Bette Nicholson', 1),
     ('Christian Gable', 1),
@@ -45,14 +44,14 @@ select employee_name,
        department_name
 from employees e
 full outer join departments d
-on d.department_id = e.departmant_id;
+on d.department_id = e.department_id;
 
 
 select employee_name,
        department_name
 from employees e
 full outer join departments d
-on d.department_id = e.departmant_id
+on d.department_id = e.department_id
 where employee_name is null;
 
 
@@ -60,5 +59,5 @@ select employee_name,
        department_name
 from employees e
 full outer join departments d
-on d.department_id = e.departmant_id
+on d.department_id = e.department_id
 where department_name is null;

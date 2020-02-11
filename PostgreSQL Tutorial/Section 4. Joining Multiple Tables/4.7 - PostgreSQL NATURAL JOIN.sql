@@ -1,16 +1,14 @@
-create table categories (
-    category_id serial primary key,
-    category_name varchar(255) not null
-);
+create table categories
+    (category_id serial primary key,
+     category_name varchar(255) not null);
 
 
-create table products (
-    product_id serial primary key,
-    product_name varchar(255) not null,
-    category_id int           not null,
-    foreign key (category_id)
-        references categories (category_id)
-);
+create table products
+    (product_id serial primary key,
+     product_name varchar(255) not null,
+     category_id int           not null,
+     foreign key (category_id)
+         references categories (category_id));
 
 
 insert into categories

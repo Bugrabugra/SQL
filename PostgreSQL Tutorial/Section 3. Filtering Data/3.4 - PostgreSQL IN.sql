@@ -1,3 +1,4 @@
+--PostgreSQL IN operator examples
 select customer_id,
        rental_id,
        return_date

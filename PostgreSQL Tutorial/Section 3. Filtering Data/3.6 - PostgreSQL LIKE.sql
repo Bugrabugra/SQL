@@ -1,3 +1,4 @@
+--PostgreSQL LIKE examples
 select first_name,
        last_name
 from customer
@@ -22,12 +23,14 @@ from customer
 where first_name like '_her%';
 
 
+--PostgreSQL NOT LIKE examples
 select first_name,
        last_name
 from customer
 where first_name not like 'Jen%';
 
 
+--PostgreSQL’s extensions of LIKE operator
 select first_name,
        last_name
 from customer

@@ -1,11 +1,9 @@
-create table T1 (
-    label char(1) primary key
-);
+create table T1
+    (label char(1) primary key);
 
 
-create table T2 (
-    score int primary key
-);
+create table T2
+    (score int primary key);
 
 
 insert into T1

@@ -1,3 +1,4 @@
+--PostgreSQL BETWEEN operator examples
 select customer_id,
        payment_id,
        amount

@@ -1,3 +1,4 @@
+--PostgreSQL FETCH examples
 select film_id,
        title
 from film

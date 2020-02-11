@@ -1,3 +1,4 @@
+--Column alias examples
 select first_name || ' ' || last_name
 from customer
 order by first_name || ' ' || last_name;

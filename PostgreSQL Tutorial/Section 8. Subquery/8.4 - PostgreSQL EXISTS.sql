@@ -1,4 +1,4 @@
---A) Find customers who have at least one payment whose amount is greater than 11.
+--Find customers who have at least one payment whose amount is greater than 11.
 select first_name,
        last_name
 from customer c
@@ -11,7 +11,7 @@ order by first_name,
          last_name;
 
 
---B) NOT EXISTS example
+--NOT EXISTS example
 select first_name,
        last_name
 from customer c
@@ -24,7 +24,7 @@ order by first_name,
          last_name;
 
 
---C) EXISTS and NULL
+--EXISTS and NULL
 select first_name,
        last_name
 from customer

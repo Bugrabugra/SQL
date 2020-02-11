@@ -1,3 +1,15 @@
+--PostgreSQL INNER JOIN to join 2 tables example
+select customer.customer_id,
+       first_name,
+       last_name,
+       email,
+       amount,
+       payment_date
+from customer
+inner join payment payment
+on customer.customer_id = payment.customer_id;
+
+
 select customer.customer_id,
        first_name,
        last_name,
@@ -7,8 +19,19 @@ select customer.customer_id,
 from customer
 inner join payment payment
 on customer.customer_id = payment.customer_id
-where customer.customer_id = 2
 order by customer.customer_id;
+
+
+select customer.customer_id,
+       first_name,
+       last_name,
+       email,
+       amount,
+       payment_date
+from customer
+inner join payment payment
+on customer.customer_id = payment.customer_id
+where customer.customer_id = 2;
 
 
 select customer.customer_id,

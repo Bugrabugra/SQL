@@ -1,14 +1,13 @@
---1) Querying hierarchy data example
+--Querying hierarchy data example
 
-create table employee (
-    employee_id int primary key,
-    first_name varchar(255) not null,
-    last_name varchar(255)  not null,
-    manager_id int,
-    foreign key (manager_id)
-        references employee (employee_id)
-        on delete cascade
-);
+create table employee
+    (employee_id int primary key,
+     first_name varchar(255) not null,
+     last_name varchar(255)  not null,
+     manager_id int,
+     foreign key (manager_id)
+         references employee (employee_id)
+         on delete cascade);
 
 
 insert into employee
@@ -43,7 +42,7 @@ on m.employee_id = e.manager_id
 order by manager;
 
 
---2) Comparing the rows with the same table
+--Comparing the rows with the same table
 select f1.title,
        f2.title,
        f1.length

@@ -1,9 +1,8 @@
-create table sales (
-    brand varchar   not null,
-    segment varchar not null,
-    quantity int    not null,
-    primary key (brand, segment)
-);
+create table sales
+    (brand varchar   not null,
+     segment varchar not null,
+     quantity int    not null,
+     primary key (brand, segment));
 
 
 insert into sales
@@ -69,6 +68,5 @@ from sales
 group by grouping sets ( (brand, segment),
                          (brand),
                          (segment),
-    ()
-    )
-    order by brand, segment;
+    ())
+order by brand, segment;

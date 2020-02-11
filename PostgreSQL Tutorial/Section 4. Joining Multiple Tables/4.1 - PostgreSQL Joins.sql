@@ -1,13 +1,12 @@
-create table basket_a (
-    id int primary key,
-    fruit varchar(100) not null
-);
+--Setting up sample tables
+create table basket_a
+    (id int primary key,
+     fruit varchar(100) not null);
 
 
-create table basket_b (
-    id int primary key,
-    fruit varchar(100) not null
-);
+create table basket_b
+    (id int primary key,
+     fruit varchar(100) not null);
 
 
 insert into basket_a(id, fruit)
@@ -24,6 +23,7 @@ values
     (2, 'Apple'),
     (3, 'Watermelon'),
     (4, 'Pear');
+
 
 --PostgreSQL inner join
 select a.id as id_a,

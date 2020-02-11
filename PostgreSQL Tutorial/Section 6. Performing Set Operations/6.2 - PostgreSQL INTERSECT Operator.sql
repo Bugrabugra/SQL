@@ -1,23 +1,21 @@
-create table employees (
-    employee_id serial primary key,
-    employee_name varchar(255) not null
-);
+--PostgreSQL INTERSECT operator example
+create table employees
+    (employee_id serial primary key,
+     employee_name varchar(255) not null);
 
 
-create table keys (
-    employee_id int primary key,
-    effective_date date not null,
-    foreign key (employee_id)
-        references employees (employee_id)
-);
+create table keys
+    (employee_id int primary key,
+     effective_date date not null,
+     foreign key (employee_id)
+         references employees (employee_id));
 
 
-create table hipos (
-    employee_id int primary key,
-    effective_date date not null,
-    foreign key (employee_id)
-        references employees (employee_id)
-);
+create table hipos
+    (employee_id int primary key,
+     effective_date date not null,
+     foreign key (employee_id)
+         references employees (employee_id));
 
 
 insert into employees

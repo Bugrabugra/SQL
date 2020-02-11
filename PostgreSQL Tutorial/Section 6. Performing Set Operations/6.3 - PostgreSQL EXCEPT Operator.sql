@@ -1,3 +1,4 @@
+--PostgreSQL EXCEPT example
 select film_id,
        title
 from film

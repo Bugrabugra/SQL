@@ -39,7 +39,6 @@ where film_id in (
 select first_name,
        last_name
 from customer
-where exists(
-              select 1
-              from payment
-              where payment.customer_id = customer.customer_id);
+where exists(select 1
+             from payment
+             where payment.customer_id = customer.customer_id);

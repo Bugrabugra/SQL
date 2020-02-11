@@ -1,3 +1,4 @@
+--PostgreSQL LEFT JOIN examples
 select film.film_id,
        film.title,
        inventory_id
