@@ -1,3 +1,4 @@
+--Setup a sample table
 create table sales
     (brand varchar   not null,
      segment varchar not null,
@@ -14,6 +15,7 @@ values
     ('XYZ', 'Basic', 300);
 
 
+--Introduction to PostgreSQL GROUPING SETS
 select brand,
        segment,
        sum(quantity)
@@ -59,6 +61,7 @@ group by grouping sets ((brand, segment),
     ());
 
 
+--Grouping function
 select grouping(brand) as grouping_brand,
        grouping(segment) as grouping_segment,
        brand,

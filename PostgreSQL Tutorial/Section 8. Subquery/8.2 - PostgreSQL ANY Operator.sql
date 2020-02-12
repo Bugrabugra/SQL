@@ -1,3 +1,4 @@
+--PostgreSQL ANY examples
 select max(length)
 from film
 inner join film_category
@@ -15,6 +16,7 @@ where length >= any (
     group by category_id);
 
 
+--ANY vs. IN
 select title,
        category_id
 from film

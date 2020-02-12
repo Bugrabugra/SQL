@@ -1,3 +1,4 @@
+--PostgreSQL ALL operator examples
 select round(avg(length), 2) as avg_length
 from film
 group by rating

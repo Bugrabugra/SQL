@@ -1,3 +1,4 @@
+--Introduction to PostgreSQL subquery
 select avg(rental_rate)
 from film;
 
@@ -18,6 +19,7 @@ where rental_rate > (
     from film);
 
 
+--PostgreSQL subquery with IN operator
 select inventory.film_id
 from rental
 inner join inventory
@@ -36,6 +38,7 @@ where film_id in (
     where return_date between '2005-05-29' and '2005-05-30');
 
 
+--PostgreSQL subquery with EXISTS operator
 select first_name,
        last_name
 from customer

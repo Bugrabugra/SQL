@@ -1,3 +1,4 @@
+--PostgreSQL CUBE examples
 select brand, segment, sum(quantity)
 from sales
 group by cube (brand, segment)

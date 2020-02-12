@@ -1,3 +1,4 @@
+--PostgreSQL ROLLUP examples
 select brand,
        segment,
        sum(quantity)
