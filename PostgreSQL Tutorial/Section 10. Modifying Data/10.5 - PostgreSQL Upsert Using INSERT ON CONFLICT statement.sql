@@ -1,3 +1,4 @@
+--PostgreSQL upsert examples
 create table customers (
     customer_id serial primary key,
     name varchar unique,

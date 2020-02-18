@@ -34,7 +34,7 @@ from link_tmp;
 update link
 set description = 'Learn PostgreSQL fast and easy',
     rel         = 'follow'
-where id = 1 returning
+where id = 25 returning
     id,
     description,
     rel;
@@ -42,4 +42,4 @@ where id = 1 returning
 
 select *
 from link
-where id = 1;
+where id = 25;

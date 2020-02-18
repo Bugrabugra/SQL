@@ -1,10 +1,9 @@
-create table link (
-    id serial primary key,
-    url varchar(255)  not null,
-    name varchar(255) not null,
-    description varchar(255),
-    rel varchar(50)
-);
+create table link
+    (id serial primary key,
+     url varchar(255)  not null,
+     name varchar(255) not null,
+     description varchar(255),
+     rel varchar(50));
 
 
 --PostgreSQL insert one-row examples
@@ -73,4 +72,3 @@ insert into link
     (url, name, last_update)
 values
     ('http://www.postgresql.org', 'PostgreSQL', DEFAULT) returning name;
-

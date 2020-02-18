@@ -1,8 +1,7 @@
-create table product_segment (
-    id serial primary key,
-    segment varchar not null,
-    discount numeric(4, 2)
-);
+create table product_segment
+    (id serial primary key,
+     segment varchar not null,
+     discount numeric(4, 2));
 
 
 insert into product_segment
@@ -20,8 +19,7 @@ create table product (
     net_price numeric(10, 2),
     segment_id int not null,
     foreign key (segment_id)
-        references product_segment (id)
-);
+        references product_segment (id));
 
 
 insert into product
