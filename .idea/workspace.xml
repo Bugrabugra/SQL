@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16a14fe8-aa46-4ec6-aaa7-c3b1b934070c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Belediyeler/İBB/Trigger işlemi/UNI_SEQUENCE.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Belediyeler/İBB/Trigger işlemi/UNI_TRIGGER_CBS_KULLANIM.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbab1b7c-14c6-4a6e-8f5d-f825291563c4/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbab1b7c-14c6-4a6e-8f5d-f825291563c4/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbab1b7c-14c6-4a6e-8f5d-f825291563c4/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbab1b7c-14c6-4a6e-8f5d-f825291563c4/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +48,7 @@
     <property name="database.console.LAST_STATE" value="true" />
     <property name="database.data.extractors.current.id" value="Tab-separated (TSV)_id" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -106,14 +112,27 @@
     <MESSAGE value="18022020 - 01" />
     <MESSAGE value="19022020 - 01" />
     <MESSAGE value="25022020 - 01" />
-    <option name="LAST_COMMIT_MESSAGE" value="25022020 - 01" />
+    <MESSAGE value="05102020 - Yeni kurulum" />
+    <option name="LAST_COMMIT_MESSAGE" value="05102020 - Yeni kurulum" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="461" y="165" key="SettingsEditor" timestamp="1601880342298">
+    <state x="845" y="383" width="644" height="550" key="#Notifications" timestamp="1601894181447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601880342298" />
+    <state x="845" y="383" width="644" height="550" key="#Notifications/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601894181447" />
+    <state x="587" y="85" key="CommitChangelistDialog2" timestamp="1601880373767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="587" y="85" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601880373767" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1601880565809">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601880565809" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601880377320">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601880377320" />
   </component>
   <component name="masterDetails">
     <states>
