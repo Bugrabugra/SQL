@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="16a14fe8-aa46-4ec6-aaa7-c3b1b934070c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>p</find>
+      <find>references</find>
+      <find>VALUES</find>
+      <find>create table</find>
+      <find>create</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>payment</replace>
+      <replace>values</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1iRp4qUIDef6BtbEgxVfU7yyzjr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DBE.Init.BalloonShown" value="true" />
+    <property name="DatabaseDriversLRU" value="oracle&#10;postgresql" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.data.extractors.current.id" value="Tab-separated (TSV)_id" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CBS\DatagripProjects\SQL\Belediyeler" />
+      <recent name="C:\Users\CBS\DatagripProjects\SQL" />
+      <recent name="C:\Users\CBS\DatagripProjects\SQL\PostgreSQL Tutorial\Section 7. Grouping Sets" />
+      <recent name="C:\Users\CBS\DatagripProjects\SQL\PostgreSQL Tutorial\Section 6. Performing Set Operations" />
+      <recent name="C:\Users\CBS\DatagripProjects\SQL\PostgreSQL Tutorial\Section 5. Grouping Data" />
+    </key>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="09072019 - 01" />
+    <MESSAGE value="09072019 - 02" />
+    <MESSAGE value="10072019 - 01" />
+    <MESSAGE value="10072019 - 02" />
+    <MESSAGE value="10072019 - 03" />
+    <MESSAGE value="11072019 - 01" />
+    <MESSAGE value="24072019 - 01" />
+    <MESSAGE value="25072019 - 01" />
+    <MESSAGE value="31072019 - 01" />
+    <MESSAGE value="07022020 - 01" />
+    <MESSAGE value="10022020 - 01" />
+    <MESSAGE value="11022020 - 01" />
+    <MESSAGE value="12022020 - 01" />
+    <MESSAGE value="18022020 - 01" />
+    <MESSAGE value="19022020 - 01" />
+    <MESSAGE value="25022020 - 01" />
+    <option name="LAST_COMMIT_MESSAGE" value="25022020 - 01" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1601880342298">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601880342298" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

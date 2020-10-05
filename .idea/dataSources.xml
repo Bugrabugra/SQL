@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@localhost" uuid="b071fb8a-068e-45fa-a80d-fbcad05e0f03">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/</jdbc-url>
-    </data-source>
     <data-source source="LOCAL" name="Oracle -" uuid="cb8bd253-17a8-4ad6-a1df-52258e85ee5c">
       <driver-ref>oracle</driver-ref>
       <synchronize>true</synchronize>
@@ -19,6 +13,18 @@
       <driver-properties>
         <property name="v$session.program" value="DataGrip" />
       </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Postgres 12" uuid="dbab1b7c-14c6-4a6e-8f5d-f825291563c4">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5433/postgres</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="AWS PostgreSQL" uuid="1d5d015d-09a4-4548-b1c6-3898964a71ee">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://35.180.83.213:5440/postgres</jdbc-url>
     </data-source>
   </component>
 </project>
