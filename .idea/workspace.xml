@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16a14fe8-aa46-4ec6-aaa7-c3b1b934070c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Belediyeler/İBB/Trigger işlemi/UNI_SEQUENCE.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Belediyeler/İBB/Trigger işlemi/UNI_TRIGGER_CBS_KULLANIM.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbab1b7c-14c6-4a6e-8f5d-f825291563c4/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbab1b7c-14c6-4a6e-8f5d-f825291563c4/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbab1b7c-14c6-4a6e-8f5d-f825291563c4/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbab1b7c-14c6-4a6e-8f5d-f825291563c4/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1d5d015d-09a4-4548-b1c6-3898964a71ee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1d5d015d-09a4-4548-b1c6-3898964a71ee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbab1b7c-14c6-4a6e-8f5d-f825291563c4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dbab1b7c-14c6-4a6e-8f5d-f825291563c4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,13 +40,19 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DBE.Init.BalloonShown" value="true" />
-    <property name="DatabaseDriversLRU" value="oracle&#10;postgresql" />
+    <property name="DatabaseDriversLRU" value="oracle&#10;postgresql&#10;mongo" />
     <property name="GoToClass.toSaveIncludeLibraries" value="true" />
+    <property name="RunOnceActivity.OpenDatabaseViewOnStart" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="database.data.extractors.current.id" value="Tab-separated (TSV)_id" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showLigatures" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -59,6 +63,7 @@
       <recent name="C:\Users\CBS\DatagripProjects\SQL\PostgreSQL Tutorial\Section 5. Grouping Data" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -96,6 +101,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="09072019 - 01" />
     <MESSAGE value="09072019 - 02" />
     <MESSAGE value="10072019 - 01" />
@@ -113,26 +119,8 @@
     <MESSAGE value="19022020 - 01" />
     <MESSAGE value="25022020 - 01" />
     <MESSAGE value="05102020 - Yeni kurulum" />
-    <option name="LAST_COMMIT_MESSAGE" value="05102020 - Yeni kurulum" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="845" y="383" width="644" height="550" key="#Notifications" timestamp="1601894181447">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="845" y="383" width="644" height="550" key="#Notifications/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601894181447" />
-    <state x="587" y="85" key="CommitChangelistDialog2" timestamp="1601880373767">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="587" y="85" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601880373767" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1601880565809">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="165" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601880565809" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601880377320">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601880377320" />
+    <MESSAGE value="01102021 - Yeni kurulum" />
+    <option name="LAST_COMMIT_MESSAGE" value="01102021 - Yeni kurulum" />
   </component>
   <component name="masterDetails">
     <states>
