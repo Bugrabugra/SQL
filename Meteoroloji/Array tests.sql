@@ -89,9 +89,6 @@ where
         sub_warnings.warning_id = any (users.warnings_to_receive) and
         112 = any(users.poi_responsibilities);
 
-SELECT x.*
-from table road as r , x
-where ST_Intersects(STBuffer(r.the_geom, 2000), x.the_geom) IS TRUE
-
-
-select * from poi where st_intersects(st_buffer(select geom from poi where id = 131, 1000), poi.geom)
+-- SELECT x.*
+-- from table road as r , x
+-- where ST_Intersects(STBuffer(r.the_geom, 2000), x.the_geom) IS TRUE
