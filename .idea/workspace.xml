@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16a14fe8-aa46-4ec6-aaa7-c3b1b934070c" name="Default Changelist" comment="01102021 - Yeni kurulum">
+    <list default="true" id="16a14fe8-aa46-4ec6-aaa7-c3b1b934070c" name="Default Changelist" comment="03102021 - Yeni kurulum">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Meteoroloji/Array tests.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Meteoroloji/Array tests.sql" afterDir="false" />
     </list>
@@ -117,7 +117,8 @@
     <MESSAGE value="25022020 - 01" />
     <MESSAGE value="05102020 - Yeni kurulum" />
     <MESSAGE value="01102021 - Yeni kurulum" />
-    <option name="LAST_COMMIT_MESSAGE" value="01102021 - Yeni kurulum" />
+    <MESSAGE value="03102021 - Yeni kurulum" />
+    <option name="LAST_COMMIT_MESSAGE" value="03102021 - Yeni kurulum" />
   </component>
   <component name="masterDetails">
     <states>

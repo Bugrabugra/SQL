@@ -3,8 +3,8 @@ from users
 where 105 = any(poi_responsibilities);
 
 update users
-set poi_responsibilities = array [105,106,107,108]
-where id = 48;
+set poi_responsibilities = array [null]
+where id = 39;
 
 insert into warnings
     (source, event, message, is_screen, is_field, rules)
@@ -48,64 +48,50 @@ where ((select id
         112 = any(poi_responsibilities);
 
 -- BU DENEME --
-select users.id, users.name, users.phone_number, users.warnings_to_receive, users.poi_responsibilities, sub_warnings.id, sub_warnings.message
-from users, (select id, message
+select users.phone_number, users.warnings_to_receive,
+       users.poi_responsibilities,
+       sub_warnings.warning_id, sub_warnings.message,
+       sub_warnings.is_screen, sub_warnings.is_field
+from users, (select id as warning_id, message, is_screen, is_field
              from warnings
-             where rules = any (
-                 select array_agg(id)
+             where uniq(sort(rules)) = uniq(sort((
+                 select array_agg(id) as rule_id
                  from rules
-                 where (source = 'heat' and
-                        (38 between min_value and max_value) and
+                 where (source = 'precipitation' and
+                        (42 between min_value and max_value) and
                         is_present = false)
-                    or (source is null and
-                        (null between min_value and max_value) and
+                    or (source = 'precipitation' and
+                        (54 between min_value and max_value) and
                         is_present = true)
-             )) as sub_warnings
+             )))) as sub_warnings
 where
-        sub_warnings.id = any (warnings_to_receive) and
-    112 = any(poi_responsibilities);
+        sub_warnings.warning_id = any (users.warnings_to_receive) and
+    112 = any(users.poi_responsibilities);
 
 
-select id, message
-from warnings
-where rules = any (
-    select array_agg(id)
-    from rules
-    where (source = 'precipitation' and
-           (35 between min_value and max_value) and
-           is_present = false)
-       or (source = 'precipitation' and
-           (45 between min_value and max_value) and
-           is_present = true)
-);
+select users.phone_number, users.warnings_to_receive,
+       users.poi_responsibilities,
+       sub_warnings.warning_id, sub_warnings.message,
+       sub_warnings.is_screen, sub_warnings.is_field
+from users, (select id as warning_id, message, is_screen, is_field
+             from warnings
+             where uniq(sort(rules)) = uniq(sort((
+                 select array_agg(id) as rule_id
+                 from rules
+                 where (source = 'green storm polygon' and
+                        (0 between min_value and max_value) and
+                        is_present = true)
+                    or (source = null and
+                        (null between min_value and max_value) and
+                        is_present = null)
+             )))) as sub_warnings
+where
+        sub_warnings.warning_id = any (users.warnings_to_receive) and
+        112 = any(users.poi_responsibilities);
 
-select array_agg(id)
-from rules
-where (source = 'precipitation' and
-       (35 between min_value and max_value) and
-       is_present = false)
-   or (source = 'precipitation' and
-       (45 between min_value and max_value) and
-       is_present = true);
-
-select id, message
-from warnings
-where 15 = any (rules);
+SELECT x.*
+from table road as r , x
+where ST_Intersects(STBuffer(r.the_geom, 2000), x.the_geom) IS TRUE
 
 
-select id, message
-from warnings
-where 14 = any (
-    select array_agg(id)
-    from rules
-    where (source = 'precipitation' and
-           (35 between min_value and max_value) and
-           is_present = false)
-       or (source = 'precipitation' and
-           (40 between min_value and max_value) and
-           is_present = true)
-);
-
-
-
-
+select * from poi where st_intersects(st_buffer(select geom from poi where id = 131, 1000), poi.geom)
