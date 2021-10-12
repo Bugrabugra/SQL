@@ -92,3 +92,9 @@ where
 -- SELECT x.*
 -- from table road as r , x
 -- where ST_Intersects(STBuffer(r.the_geom, 2000), x.the_geom) IS TRUE
+
+update users set username = 'teneke4',
+    email = 'yetkisiz@gmail.com', phone_number = '0535-7458963', name = 'teneke',
+         surname = 'teneke2', is_admin = false,
+         poi_responsibilities = array [105,106,107,108],
+         warnings_to_receive = array [null] where id = 48 returning id
