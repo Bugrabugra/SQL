@@ -97,4 +97,11 @@ update users set username = 'teneke4',
     email = 'yetkisiz@gmail.com', phone_number = '0535-7458963', name = 'teneke',
          surname = 'teneke2', is_admin = false,
          poi_responsibilities = array [105,106,107,108],
-         warnings_to_receive = array [null] where id = 48 returning id
+         warnings_to_receive = array [null] where id = 48 returning id;
+
+insert into users
+    (username, password, email, phone_number, name, surname, is_admin, poi_responsibilities, warnings_to_receive)
+    values
+    ('TEST', 'TESTTEST', 'TEST@gmail.com', 'TEST', 'TEST', 'TEST', false, '{1,2,3}', '{1,2,3}');
+
+select * from users where username != 'admin';
