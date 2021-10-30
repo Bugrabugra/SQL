@@ -1,0 +1,1 @@
+SELECT name, population, area from cities
