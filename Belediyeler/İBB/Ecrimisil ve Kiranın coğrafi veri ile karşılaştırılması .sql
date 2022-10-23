@@ -1,4 +1,4 @@
---coğrafideki distinctli veriler
+--cografideki distinctli veriler
 select distinct(dosya_no)
 from ebis_cbs_prod.cbs_kullanim
 where dosya_no like 'EE%';
