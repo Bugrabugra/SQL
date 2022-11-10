@@ -1,3 +1,4 @@
+-- select neighborhoods containing the vehicles
 select *
 from neighborhoods
 where st_intersects(
