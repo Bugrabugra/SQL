@@ -901,3 +901,811 @@ WHERE
   state IN ('CA', 'NJ')
 ORDER BY
   state;
+
+SELECT item_id, price
+FROM
+  item
+    INNER JOIN sales_item ON item.id = sales_item.item_id AND price > 120.00
+ORDER BY
+  item_id;
+
+SELECT sales_order.id, sales_item.quantity, item.price, (sales_item.quantity * item.price) AS total
+FROM
+  sales_order
+    JOIN sales_item ON sales_order.id = sales_item.sales_order_id
+    JOIN item ON sales_item.item_id = item.id
+ORDER BY
+  sales_order.id;
+
+/*
+Addition : +
+Subtraction : -
+Division : /
+Integer Division : DIV
+Modulus : %
+*/
+
+SELECT item_id, price
+FROM
+  item,
+  sales_item
+WHERE
+  item.id = sales_item.item_id AND
+  price > 120.00
+ORDER BY
+  item_id;
+
+SELECT name, supplier, price
+FROM
+  product
+    LEFT JOIN item ON item.product_id = product.id
+ORDER BY
+  name;
+
+SELECT sales_order_id, quantity, product_id
+FROM
+  item
+    CROSS JOIN sales_item
+ORDER BY
+  sales_order_id;
+
+SELECT first_name, last_name, street, city, zip, birth_date
+FROM
+  customer
+WHERE
+  EXTRACT(MONTH FROM birth_date) = 12
+UNION
+SELECT first_name, last_name, street, city, zip, birth_date
+FROM
+  sales_person
+WHERE
+  EXTRACT(MONTH FROM birth_date) = 12
+ORDER BY
+  birth_date;
+
+SELECT product_id, price
+FROM
+  item
+WHERE
+  price IS NOT NULL;
+
+SELECT first_name, last_name
+FROM
+  customer
+WHERE
+  first_name SIMILAR TO 'M%';
+
+SELECT first_name, last_name
+FROM
+  customer
+WHERE
+  first_name LIKE 'A_____';
+
+SELECT first_name, last_name
+FROM
+  customer
+WHERE
+  first_name SIMILAR TO 'D%' OR
+  last_name SIMILAR TO '%n';
+
+SELECT first_name, last_name
+FROM
+  customer
+WHERE
+  first_name ~ '^Ma';
+
+SELECT first_name, last_name
+FROM
+  customer
+WHERE
+  last_name ~ 'ez$';
+
+SELECT first_name, last_name
+FROM
+  customer
+WHERE
+  last_name ~ 'ez|son';
+
+SELECT first_name, last_name
+FROM
+  customer
+WHERE
+  last_name ~ '[w-z]';
+
+SELECT EXTRACT(MONTH FROM birth_date) AS month, COUNT(*) AS amount
+FROM
+  customer
+GROUP BY
+  month
+ORDER BY
+  month;
+
+SELECT EXTRACT(MONTH FROM birth_date) AS month, COUNT(*) AS amount
+FROM
+  customer
+GROUP BY
+  month
+HAVING
+  COUNT(*) > 1
+ORDER BY
+  month;
+
+SELECT COUNT(*) AS items, SUM(price) AS value, ROUND(AVG(price), 2) AS avg, MIN(price) AS min, MAX(price) AS max
+FROM
+  item;
+
+CREATE VIEW purchase_order_overview AS
+SELECT
+  sales_order.purchase_order_number,
+  customer.company,
+  sales_item.quantity,
+  product.supplier,
+  product.name,
+  item.price,
+  (sales_item.quantity * item.price)                           AS total,
+  CONCAT(sales_person.first_name, ' ', sales_person.last_name) AS salesperson
+FROM
+  sales_order
+    JOIN sales_item ON sales_item.sales_order_id = sales_order.id
+    JOIN item ON item.id = sales_item.item_id
+    JOIN customer ON sales_order.cust_id = customer.id
+    JOIN product ON item.product_id = product.id
+    JOIN sales_person ON sales_order.sales_person_id = sales_person.id
+ORDER BY
+  purchase_order_number;
+
+SELECT *
+FROM
+  purchase_order_overview;
+
+CREATE VIEW purchase_order_overview_2 AS
+SELECT
+  sales_order.purchase_order_number,
+  customer.company,
+  sales_item.quantity,
+  product.supplier,
+  product.name,
+  item.price,
+  CONCAT(sales_person.first_name, ' ', sales_person.last_name) AS salesperson
+FROM
+  sales_order
+    JOIN sales_item ON sales_item.sales_order_id = sales_order.id
+    JOIN item ON item.id = sales_item.item_id
+    JOIN customer ON sales_order.cust_id = customer.id
+    JOIN product ON item.product_id = product.id
+    JOIN sales_person ON sales_order.sales_person_id = sales_person.id
+ORDER BY
+  purchase_order_number;
+
+SELECT *, (quantity * price) AS total
+FROM
+  purchase_order_overview_2;
+
+DROP VIEW purchase_order_overview_2;
+
+CREATE OR REPLACE FUNCTION fn_add_ints(INT, INT) RETURNS INT AS
+'SELECT $1 + $2'
+  LANGUAGE sql;
+
+SELECT fn_add_ints(4, 5);
+
+CREATE OR REPLACE FUNCTION fn_add_ints(INT, INT) RETURNS INT AS
+$body$
+SELECT $1 + $2;
+$body$
+  LANGUAGE sql;
+
+SELECT fn_add_ints(4, 5);
+
+CREATE OR REPLACE FUNCTION fn_update_employee_state() RETURNS VOID AS
+$body$
+UPDATE sales_person
+SET
+  state = 'PA'
+WHERE
+  state IS NULL
+$body$
+  LANGUAGE sql;
+
+SELECT fn_update_employee_state();
+
+CREATE OR REPLACE FUNCTION fn_max_product_price() RETURNS NUMERIC AS
+$body$
+SELECT MAX(price)
+FROM
+  item;
+$body$
+  LANGUAGE sql;
+
+SELECT fn_max_product_price();
+
+CREATE OR REPLACE FUNCTION fn_get_value_inventory() RETURNS NUMERIC AS
+$body$
+SELECT SUM(price)
+FROM
+  item;
+$body$
+  LANGUAGE sql;
+
+SELECT fn_get_value_inventory();
+
+CREATE OR REPLACE FUNCTION fn_number_customers() RETURNS NUMERIC AS
+$body$
+SELECT COUNT(*)
+FROM
+  customer;
+$body$
+  LANGUAGE sql;
+
+SELECT fn_number_customers();
+
+CREATE OR REPLACE FUNCTION fn_number_customers_no_phone() RETURNS NUMERIC AS
+$body$
+SELECT COUNT(*)
+FROM
+  customer
+WHERE
+  phone IS NULL;
+$body$
+  LANGUAGE sql;
+
+SELECT fn_number_customers_no_phone();
+
+CREATE OR REPLACE FUNCTION fn_get_number_customers_from_state(state_name CHAR(2)) RETURNS NUMERIC AS
+$body$
+SELECT COUNT(*)
+FROM
+  customer
+WHERE
+  state = state_name;
+$body$
+  LANGUAGE sql;
+
+SELECT fn_get_number_customers_from_state('TX');
+
+SELECT COUNT(*)
+FROM
+  sales_order
+    NATURAL JOIN customer
+WHERE
+  customer.first_name = 'Christopher' AND
+  customer.last_name = 'Jones';
+
+CREATE OR REPLACE FUNCTION fn_get_number_orders_from_customer(cus_fname VARCHAR, cus_lname VARCHAR) RETURNS NUMERIC AS
+$body$
+SELECT COUNT(*)
+FROM
+  sales_order
+    NATURAL JOIN customer
+WHERE
+  customer.first_name = cus_fname AND
+  customer.last_name = cus_lname
+$body$
+  LANGUAGE sql;
+
+SELECT fn_get_number_orders_from_customer('Christopher', 'Jones');
+
+CREATE OR REPLACE FUNCTION fn_get_last_order() RETURNS sales_order AS
+$body$
+SELECT *
+FROM
+  sales_order
+ORDER BY
+  time_order_taken DESC
+LIMIT 1;
+$body$
+  LANGUAGE sql;
+
+SELECT (fn_get_last_order()).*;
+
+SELECT *
+FROM
+  sales_person
+WHERE
+  state = 'CA';
+
+CREATE OR REPLACE FUNCTION fn_get_employees_location(loc VARCHAR) RETURNS SETOF sales_person AS
+$body$
+SELECT *
+FROM
+  sales_person
+WHERE
+  state = loc;
+$body$
+  LANGUAGE sql;
+
+SELECT (fn_get_employees_location('CA')).*;
+
+SELECT first_name, last_name, phone
+FROM
+  fn_get_employees_location('CA');
+
+SELECT item.price
+FROM
+  item
+    NATURAL JOIN product
+WHERE
+  product.name = 'Grandview';
+
+/*CREATE OR REPLACE FUNCTION fn_get_price_product_name(prod_name varchar) returns numeric as
+$body$
+BEGIN
+return item.price
+FROM
+  item
+    NATURAL JOIN product
+  WHERE product.name = prod_name;
+END
+$body$
+LANGUAGE plpgsql;*/
+
+SELECT fn_get_price_product_name('Grandview');
+
+CREATE OR REPLACE FUNCTION fn_get_sum(val1 INT, val2 INT) RETURNS INT AS
+$body$
+DECLARE
+  ans INT;
+BEGIN
+  ans := val1 + val2;
+  RETURN ans;
+END
+$body$
+  LANGUAGE plpgsql;
+
+SELECT fn_get_sum(4, 5);
+
+CREATE OR REPLACE FUNCTION fn_get_random_number(min_val INT, max_val INT) RETURNS INT AS
+$body$
+DECLARE
+  rand INT;
+BEGIN
+  SELECT RANDOM() * (max_val - min_val) + min_val INTO rand;
+  RETURN rand;
+END
+$body$
+  LANGUAGE plpgsql;
+
+SELECT fn_get_random_number(1, 50);
+
+CREATE OR REPLACE FUNCTION fn_get_random_salesperson() RETURNS VARCHAR AS
+$body$
+DECLARE
+  rand INT;
+  emp  RECORD;
+BEGIN
+  SELECT RANDOM() * (5 - 1) + 1 INTO rand;
+  SELECT * FROM sales_person WHERE id = rand INTO emp;
+
+  RETURN CONCAT(emp.first_name, ' ', emp.last_name);
+END
+$body$
+  LANGUAGE plpgsql;
+
+SELECT fn_get_random_salesperson();
+
+CREATE OR REPLACE FUNCTION fn_get_sum_2(IN v1 INT, IN v2 INT, OUT ans INT) AS
+$body$
+BEGIN
+  ans := v1 + v2;
+END
+$body$
+  LANGUAGE plpgsql;
+
+SELECT fn_get_sum_2(4, 5);
+
+CREATE OR REPLACE FUNCTION fn_get_cust_birthday(IN the_month INT, OUT bd_month INT, OUT bd_day INT, OUT f_name VARCHAR,
+                                                OUT l_name VARCHAR) AS
+$body$
+BEGIN
+  SELECT EXTRACT(MONTH FROM birth_date), EXTRACT(DAY FROM birth_date), first_name, last_name
+  INTO bd_month, bd_day, f_name, l_name
+  FROM
+    customer
+  WHERE
+    EXTRACT(MONTH FROM birth_date) = the_month
+  LIMIT 1;
+END
+$body$
+  LANGUAGE plpgsql;
+
+SELECT fn_get_cust_birthday(12);
+
+CREATE OR REPLACE FUNCTION fn_get_sales_people() RETURNS SETOF sales_person AS
+$body$
+BEGIN
+  RETURN QUERY
+    SELECT * FROM sales_person;
+END
+$body$
+  LANGUAGE plpgsql;
+
+SELECT (fn_get_sales_people()).street;
+
+SELECT product.name, product.supplier, item.price
+FROM
+  item
+    NATURAL JOIN product
+ORDER BY
+  item.price DESC
+LIMIT 10;
+
+CREATE OR REPLACE FUNCTION fn_get_10_expensive_prods()
+  RETURNS TABLE (
+    name     VARCHAR,
+    supplier VARCHAR,
+    price    NUMERIC
+  )
+AS
+$body$
+BEGIN
+  RETURN QUERY
+    SELECT product.name, product.supplier, item.price
+    FROM
+      item
+        NATURAL JOIN product
+    ORDER BY
+      item.price DESC
+    LIMIT 10;
+END
+$body$
+  LANGUAGE plpgsql;
+
+SELECT (fn_get_10_expensive_prods()).*;
+
+CREATE OR REPLACE FUNCTION fn_check_month_orders(the_month INT) RETURNS VARCHAR
+AS
+$body$
+DECLARE
+  total_orders INT;
+BEGIN
+  SELECT COUNT(purchase_order_number)
+  INTO total_orders
+  FROM
+    sales_order
+  WHERE
+    EXTRACT(MONTH FROM time_order_taken) = the_month;
+  IF total_orders > 5 THEN
+    RETURN CONCAT(total_orders, ' Orders: Doing good');
+  ELSEIF total_orders < 5 THEN
+    RETURN CONCAT(total_orders, ' Orders: Doing bad');
+  ELSE
+    RETURN CONCAT(total_orders, ' Orders: On target');
+  END IF;
+END;
+$body$
+  LANGUAGE plpgsql;
+
+SELECT fn_check_month_orders(12);
+
+CREATE OR REPLACE FUNCTION fn_check_month_orders_2(the_month INT) RETURNS VARCHAR
+AS
+$body$
+DECLARE
+  total_orders INT;
+BEGIN
+  SELECT COUNT(purchase_order_number)
+  INTO total_orders
+  FROM
+    sales_order
+  WHERE
+    EXTRACT(MONTH FROM time_order_taken) = the_month;
+  CASE
+    WHEN total_orders < 1 THEN RETURN CONCAT(total_orders, ' Orders: Terrible');
+    WHEN total_orders > 1 AND total_orders < 5 THEN RETURN CONCAT(total_orders, ' Orders: On target');
+    ELSE RETURN CONCAT(total_orders, ' Orders: Doing good');
+    END CASE;
+END;
+$body$
+  LANGUAGE plpgsql;
+
+SELECT fn_check_month_orders_2(12);
+
+CREATE OR REPLACE FUNCTION fn_loop_test(max_num INT) RETURNS INT
+AS
+$body$
+DECLARE
+  j       INT DEFAULT 1;
+  tot_sum INT DEFAULT 0;
+BEGIN
+  LOOP
+    tot_sum := tot_sum + j;
+    j := j + 1;
+    EXIT WHEN j > max_num;
+  END LOOP;
+
+  RETURN tot_sum;
+END;
+$body$
+  LANGUAGE plpgsql;
+
+SELECT fn_loop_test(5);
+
+CREATE OR REPLACE FUNCTION fn_for_test(max_num INT) RETURNS INT
+AS
+$body$
+DECLARE
+  tot_sum INT DEFAULT 0;
+BEGIN
+  FOR i IN 1 .. max_num BY 2
+    LOOP
+      tot_sum := tot_sum + i;
+    END LOOP;
+
+  RETURN tot_sum;
+END;
+$body$
+  LANGUAGE plpgsql;
+
+SELECT fn_for_test(6);
+
+CREATE OR REPLACE FUNCTION fn_for_test_reverse(max_num INT) RETURNS INT
+AS
+$body$
+DECLARE
+  tot_sum INT DEFAULT 0;
+BEGIN
+  FOR i IN REVERSE max_num .. 1 BY 2
+    LOOP
+      tot_sum := tot_sum + i;
+    END LOOP;
+
+  RETURN tot_sum;
+END;
+$body$
+  LANGUAGE plpgsql;
+
+SELECT fn_for_test_reverse(5);
+
+DO
+$body$
+  DECLARE
+    rec RECORD;
+  BEGIN
+    FOR rec IN
+      SELECT first_name, last_name
+      FROM
+        sales_person
+      LIMIT 5
+      LOOP
+        --Outputs info to Messages
+        RAISE NOTICE '%, %', rec.first_name, rec.last_name;
+      END LOOP;
+  END;
+$body$
+LANGUAGE plpgsql;
+
+DO
+$body$
+  DECLARE
+    arr1 INT[] := ARRAY [1,2,3];
+    i    INT;
+  BEGIN
+    FOREACH i IN ARRAY arr1
+      LOOP
+        --Outputs info to Messages
+        RAISE NOTICE '%', i;
+      END LOOP;
+  END;
+$body$
+LANGUAGE plpgsql;
+
+DO
+$body$
+  DECLARE
+    j         INT DEFAULT 1;
+    total_sum INT DEFAULT 0;
+  BEGIN
+    WHILE j <= 10
+      LOOP
+        total_sum := total_sum + j;
+        j := j + 1;
+      END LOOP;
+
+    RAISE NOTICE '%', total_sum;
+  END;
+$body$
+LANGUAGE plpgsql;
+
+DO
+$body$
+  DECLARE
+    i INT DEFAULT 1;
+  BEGIN
+    LOOP
+      i := i + 1;
+      EXIT WHEN i > 10;
+      CONTINUE WHEN MOD(i, 2) = 0;
+      RAISE NOTICE 'Num: %', i;
+    END LOOP;
+  END;
+$body$
+LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION fn_get_supplier_value(the_supplier VARCHAR) RETURNS VARCHAR
+AS
+$body$
+DECLARE
+  supplier_name VARCHAR;
+  price_sum     NUMERIC;
+BEGIN
+  SELECT product.supplier, SUM(item.price)
+  INTO supplier_name, price_sum
+  FROM
+    product,
+    item
+  WHERE
+    product.supplier = the_supplier
+  GROUP BY product.supplier;
+
+  RETURN CONCAT(supplier_name, ' Inventory Value : $', price_sum);
+END;
+$body$
+  LANGUAGE plpgsql;
+
+SELECT fn_get_supplier_value('Nike');
+
+CREATE TABLE past_due (
+  id      SERIAL PRIMARY KEY,
+  cust_id INTEGER       NOT NULL,
+  balance NUMERIC(6, 2) NOT NULL
+);
+
+INSERT INTO
+  past_due(cust_id, balance)
+VALUES
+  (1, 123.45),
+  (2, 324.50);
+
+SELECT *
+FROM
+  past_due;
+
+CREATE OR REPLACE PROCEDURE pr_dept_paid(
+  past_due_id INT,
+  payment NUMERIC
+) AS
+
+$body$
+DECLARE
+BEGIN
+  UPDATE past_due SET balance = balance - payment WHERE id = past_due_id;
+  COMMIT;
+END;
+$body$
+  LANGUAGE plpgsql;
+
+CALL pr_dept_paid(1, 10);
+
+CREATE TABLE distributor (
+  id   SERIAL PRIMARY KEY,
+  name VARCHAR(100)
+);
+
+INSERT INTO
+  distributor
+  (name)
+VALUES
+  ('Parawholesale'),
+  ('J & B Sales'),
+  ('Steel City Clothing');
+
+SELECT *
+FROM
+  distributor;
+
+CREATE TABLE distributor_audit (
+  id        SERIAL PRIMARY KEY,
+  dist_id   INT          NOT NULL,
+  name      VARCHAR(100) NOT NULL,
+  edit_date TIMESTAMP    NOT NULL
+);
+
+CREATE OR REPLACE FUNCTION fn_log_dist_name_change() RETURNS TRIGGER
+  LANGUAGE plpgsql AS
+$body$
+BEGIN
+  IF new.name <> old.name THEN
+    INSERT INTO
+      distributor_audit
+      (dist_id, name, edit_date)
+    VALUES
+      (old.id, old.name, NOW());
+  END IF;
+  RAISE NOTICE 'Trigger name: %', TG_NAME;
+  RAISE NOTICE 'Table name: %', TG_TABLE_NAME;
+  RAISE NOTICE 'Operation: %', TG_OP;
+  RAISE NOTICE 'When executed: %', TG_WHEN;
+  RAISE NOTICE 'Row or Statement: %', TG_LEVEL;
+  RAISE NOTICE 'Table Schema: %', TG_TABLE_SCHEMA;
+
+  RETURN new;
+END;
+$body$;
+
+CREATE TRIGGER tr_dist_name_changed
+  BEFORE UPDATE
+  ON distributor
+  FOR EACH ROW
+EXECUTE PROCEDURE fn_log_dist_name_change();
+
+UPDATE distributor
+SET
+  name = 'Western Clothing'
+WHERE
+  id = 2;
+
+SELECT *
+FROM
+  distributor_audit;
+
+CREATE OR REPLACE FUNCTION fn_block_weekend_changes() RETURNS TRIGGER
+  LANGUAGE plpgsql AS
+$body$
+BEGIN
+  RAISE NOTICE 'No database changes allowed on the weekend';
+
+  RETURN NULL;
+END;
+$body$;
+
+CREATE OR REPLACE TRIGGER tr_block_weekend_changes
+  BEFORE UPDATE OR INSERT OR DELETE OR TRUNCATE
+  ON distributor
+  FOR EACH STATEMENT
+  WHEN (EXTRACT('DOW' FROM CURRENT_TIMESTAMP) = 1)
+EXECUTE PROCEDURE fn_block_weekend_changes();
+
+UPDATE distributor
+SET
+  name = 'Western Clothing'
+WHERE
+  id = 2;
+
+DROP EVENT TRIGGER tr_block_weekend_changes;
+
+DO
+$body$
+  DECLARE
+    msg          TEXT DEFAULT '';
+    rec_customer RECORD;
+    cur_customers CURSOR
+      FOR SELECT *
+          FROM
+            customer;
+  BEGIN
+    OPEN cur_customers;
+    LOOP
+      FETCH cur_customers INTO rec_customer;
+      EXIT WHEN NOT FOUND;
+      msg := msg || rec_customer.first_name || ' ' || rec_customer.last_name || ', ';
+    END LOOP;
+
+    RAISE NOTICE 'Customers : %', msg;
+  END;
+$body$;
+
+CREATE OR REPLACE FUNCTION fn_get_cust_by_state(c_state VARCHAR) RETURNS TEXT
+  LANGUAGE plpgsql AS
+$body$
+DECLARE
+  cust_names   TEXT DEFAULT '';
+  rec_customer RECORD;
+  cur_cust_by_state CURSOR (c_state VARCHAR)
+    FOR SELECT first_name, last_name, state
+        FROM
+          customer
+        WHERE
+          state = c_state;
+BEGIN
+  OPEN cur_cust_by_state(c_state);
+  LOOP
+    FETCH cur_cust_by_state INTO rec_customer;
+    EXIT WHEN NOT found;
+    cust_names := cust_names || rec_customer.first_name || ' ' || rec_customer.last_name || ', ';
+  END LOOP;
+  CLOSE cur_cust_by_state;
+  RETURN cust_names;
+END;
+$body$;
+
+SELECT fn_get_cust_by_state('CA')
